@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerador de Paletas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="masthead">
+    <h1>Paleta</h1>
+    <p class="hint">
+      Clique em uma cor para copiar o código hex.
+      Pressione a barra de espaço para gerar uma nova combinação.
+    </p>
+  </header>
+
+  <!-- As cores são criadas dinamicamente pelo script.js -->
+  <main class="palette" id="palette"></main>
+
+  <footer class="controls">
+    <button id="generate-btn" class="generate-btn">Gerar nova paleta</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

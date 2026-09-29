@@ -1,0 +1,136 @@
+:root {
+  --paper: #f3f1ec;
+  --ink: #201f1b;
+  --muted: #6b675d;
+  --line: #d8d4c9;
+  --accent: #2f3b2f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background-color: var(--paper);
+  color: var(--ink);
+}
+
+.masthead {
+  padding: 2.5rem 2rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.masthead h1 {
+  margin: 0 0 0.5rem;
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.hint {
+  margin: 0;
+  max-width: 40ch;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.palette {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.swatch {
+  position: relative;
+  display: flex;
+  flex: 1 1 200px;
+  min-height: 220px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: flex-grow 0.2s ease;
+}
+
+.swatch:hover {
+  flex-grow: 1.15;
+}
+
+.lock-btn {
+  align-self: flex-end;
+  padding: 0.25rem;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.lock-btn:hover {
+  opacity: 1;
+}
+
+.hex-code {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.generate-btn {
+  padding: 0.75rem 1.75rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--paper);
+  background-color: var(--accent);
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.generate-btn:hover {
+  opacity: 0.85;
+}
+
+.generate-btn:focus-visible,
+.lock-btn:focus-visible,
+.swatch:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .palette {
+    flex-direction: column;
+  }
+
+  .swatch {
+    min-height: 120px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .swatch,
+  .generate-btn {
+    transition: none;
+  }
+}
